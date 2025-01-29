@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@layer components {
+  /* Dyslexic-Friendly Font */
+  .dyslexic-font {
+    @apply font-serif bg-blue-600 text-red-800 font-extrabold leading-relaxed tracking-wide;
+  }
+
+  /* Cursor Highlight */
+  .cursor-highlight * {
+    cursor: pointer;
+  }
+
+  .cursor-highlight button,
+  .cursor-highlight a,
+  .cursor-highlight input,
+  .cursor-highlight textarea {
+    @apply ring-2 ring-red-400 ring-offset-2;
+  }
+
+
+
+  /* General Readability Enhancements */
+  .readable-text {
+    @apply text-lg leading-relaxed tracking-wide text-gray-900 dark:text-gray-100;
+  }
+}
