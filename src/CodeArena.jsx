@@ -32,10 +32,15 @@ const AccessibilityWidget = () => {
   });
 
   useEffect(() => {
+
+    // const root = document.querySelector('#featured-contest');
+
     if (settings.highContrast) {
       document.body.classList.add('contrast-125');
+      // document.body.classList.add('sticky');
     } else {
       document.body.classList.remove('contrast-125');
+      // document.body.classList.remove('sticky');
     }
 
     if (settings.largeText) {
@@ -71,7 +76,7 @@ const AccessibilityWidget = () => {
     <div className="fixed bottom-4 right-4 z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-blue-600 text-black p-3 rounded-full hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-lg transition-all duration-200 hover:scale-110"
+        className="bg-emerald-600 text-black p-3 rounded-full hover:bg-emerald-700 focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-lg transition-all duration-200 hover:scale-110 cursor-pointer"
         aria-label="Toggle accessibility menu"
       >
         <AccessibilityIcon />
@@ -81,7 +86,7 @@ const AccessibilityWidget = () => {
         <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl p-4 w-72 border border-gray-200">
           <h2 className="text-lg font-bold mb-4 text-gray-800">Accessibility Options</h2>
           
-          <div className="space-y-4">
+          <div className="space-y-4 fixed bottom-4 right-4 z-50 sticky-bottom">
             <div className="flex items-center justify-between">
               <label className="flex items-center cursor-pointer">
                 <input
@@ -215,13 +220,13 @@ const CodeArena = () => {
       <div className="max-w-6xl mx-auto p-6">
         {/* Header */}
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-blue-800 mb-2">CodeArena</h1>
+          <h1 className="text-4xl font-bold text-emerald-600 mb-2">CodeArena</h1>
           <p className="text-xl text-gray-600">Become an Algorithm Champion</p>
         </header>
 
         {/* Featured Contest */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-8" aria-labelledby="featured-contest">
-          <h2 id="featured-contest" className="text-2xl font-bold text-blue-700 mb-4">
+          <h2 id="featured-contest" className="text-2xl font-bold text-emerald-600 mb-4">
             Featured Contest
           </h2>
           <div className="bg-blue-50 p-4 rounded-lg">
@@ -241,7 +246,7 @@ const CodeArena = () => {
               </div>
             </div>
             <button 
-              className="mt-4 bg-blue-600 text-black px-6 py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="mt-4 text-emerald-600 text-black font-semibold border-2 px-6 py-2 rounded-lg hover:bg-emerald-600 hover:text-white focus:ring-2 focus:ring-emerald-500 focus:outline-none cursor-pointer"
               aria-label="bg for Weekly Coding Sprint"
             >
               Register Now
@@ -253,7 +258,7 @@ const CodeArena = () => {
         <section className="grid md:grid-cols-3 gap-6 mb-8" aria-label="Core Platform Features">
           {coreFeatures.map((feature, index) => (
             <div key={index} className="bg-white rounded-lg shadow p-6">
-              <h2 className="text-xl font-bold text-blue-700 mb-4">{feature.title}</h2>
+              <h2 className="text-xl font-bold text-emerald-600 mb-4">{feature.title}</h2>
               <ul className="space-y-2">
                 {feature.items.map((item, itemIndex) => (
                   <li key={itemIndex}>{item}</li>
@@ -265,7 +270,7 @@ const CodeArena = () => {
 
         {/* Current Activities */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-8" aria-labelledby="current-activities">
-          <h2 id="current-activities" className="text-2xl font-bold text-blue-700 mb-4">
+          <h2 id="current-activities" className="text-2xl font-bold text-emerald-600 mb-4">
             Current Activities
           </h2>
           
@@ -294,7 +299,7 @@ const CodeArena = () => {
 
         {/* Platform Stats */}
         <section className="bg-white rounded-lg shadow-lg p-6 mb-8" aria-labelledby="platform-stats">
-          <h2 id="platform-stats" className="text-2xl font-bold text-blue-700 mb-4">
+          <h2 id="platform-stats" className="text-2xl font-bold text-emerald-600 mb-4">
             Why Coders Choose Us?
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

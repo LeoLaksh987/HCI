@@ -1,17 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import CodeArena from './CodeArena'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import CodeArena from './CodeArena';
+import Problems from './Problems';
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
-    <>
-      <CodeArena />
-    </>
-  )
+    <Router>
+      <Navbar /> {/* Always visible */}
+
+      <Routes>
+        <Route path="/" element={<CodeArena />} />
+        <Route path="/problems" element={<Problems />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

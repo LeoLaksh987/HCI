@@ -2,7 +2,7 @@
 @layer components {
   /* Dyslexic-Friendly Font */
   .dyslexic-font {
-    @apply font-serif bg-blue-600 text-red-800 font-extrabold leading-relaxed tracking-wide;
+    @apply font-serif bg-blue-500 text-red-800 font-extrabold leading-relaxed tracking-wide;
   }
 
   /* Cursor Highlight */
@@ -17,10 +17,38 @@
     @apply ring-2 ring-red-400 ring-offset-2;
   }
 
-
+  .high-contrast *:not(script, style, noscript) {
+    @apply bg-yellow-100 text-black shadow-none  [text-shadow:none] ;
+  }
 
   /* General Readability Enhancements */
   .readable-text {
     @apply text-lg leading-relaxed tracking-wide text-gray-900 dark:text-gray-100;
   }
+}
+
+.hover-text-enlarge p,
+.hover-text-enlarge h1,
+.hover-text-enlarge h2,
+.hover-text-enlarge h3,
+.hover-text-enlarge h4,
+.hover-text-enlarge h5,
+.hover-text-enlarge h6,
+.hover-text-enlarge span,
+.hover-text-enlarge li,
+.hover-text-enlarge a {
+  transition: font-size 0.2s ease-in-out;
+}
+
+.hover-text-enlarge p:hover,
+.hover-text-enlarge h1:hover,
+.hover-text-enlarge h2:hover,
+.hover-text-enlarge h3:hover,
+.hover-text-enlarge h4:hover,
+.hover-text-enlarge h5:hover,
+.hover-text-enlarge h6:hover,
+.hover-text-enlarge span:hover,
+.hover-text-enlarge li:hover,
+.hover-text-enlarge a:hover {
+  font-size: 1.2em;
 }
