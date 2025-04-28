@@ -1,154 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-// AccessibilityIcon Component
-const AccessibilityIcon = () => (
-  <svg 
-    className="w-6 h-6" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="10" strokeWidth="2"/>
-    <path 
-      strokeWidth="2"
-      strokeLinecap="round"
-      d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 3v7m-3-3h6"
-    />
-  </svg>
-);
+
 
 // AccessibilityWidget Component
-const AccessibilityWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [settings, setSettings] = useState({
-    highContrast: false,
-    largeText: false,
-    screenReader: false,
-    reducedMotion: false,
-    dyslexicFont: false,
-    cursorHighlight: false,
-    keyboardNav: false,
-  });
-
-  useEffect(() => {
-
-    // const root = document.querySelector('#featured-contest');
-
-    if (settings.highContrast) {
-      document.body.classList.add('contrast-125');
-      // document.body.classList.add('sticky');
-    } else {
-      document.body.classList.remove('contrast-125');
-      // document.body.classList.remove('sticky');
-    }
-
-    if (settings.largeText) {
-      document.body.classList.add('text-2xl');
-    } else {
-      document.body.classList.remove('text-2xl');
-    }
 
 
-
-    if (settings.dyslexicFont) {
-      document.body.classList.add('dyslexic-font');
-    } else {
-      document.body.classList.remove('dyslexic-font');
-    }
-
-    if (settings.cursorHighlight) {
-      document.body.classList.add('cursor-highlight');
-    } else {
-      document.body.classList.remove('cursor-highlight');
-    }
-
-  }, [settings]);
-
-  const toggleSetting = (setting) => {
-    setSettings(prev => ({
-      ...prev,
-      [setting]: !prev[setting]
-    }));
-  };
-
-  return (
-    <div className="fixed bottom-4 right-4 z-50">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="bg-emerald-600 text-black p-3 rounded-full hover:bg-emerald-700 focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-lg transition-all duration-200 hover:scale-110 cursor-pointer"
-        aria-label="Toggle accessibility menu"
-      >
-        <AccessibilityIcon />
-      </button>
-
-      {isOpen && (
-        <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl p-4 w-72 border border-gray-200">
-          <h2 className="text-lg font-bold mb-4 text-gray-800">Accessibility Options</h2>
-          
-          <div className="space-y-4 fixed bottom-4 right-4 z-50 sticky-bottom">
-            <div className="flex items-center justify-between">
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                  checked={settings.highContrast}
-                  onChange={() => toggleSetting('highContrast')}
-                />
-                <span className="ml-2 text-gray-700">High Contrast</span>
-              </label>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                  checked={settings.largeText}
-                  onChange={() => toggleSetting('largeText')}
-                />
-                <span className="ml-2 text-gray-700">Large Text</span>
-              </label>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                  checked={settings.dyslexicFont}
-                  onChange={() => toggleSetting('dyslexicFont')}
-                />
-                <span className="ml-2 text-gray-700">Dyslexic-friendly Font</span>
-              </label>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                  checked={settings.cursorHighlight}
-                  onChange={() => toggleSetting('cursorHighlight')}
-                />
-                <span className="ml-2 text-gray-700">Cursor Highlighting</span>
-              </label>
-            </div>
-
-           
-          </div>
-
-          <button
-            onClick={() => setIsOpen(false)}
-            className="mt-4 w-full bg-gray-100 text-gray-800 py-2 rounded hover:bg-gray-200 focus:ring-2 focus:ring-gray-300 focus:outline-none"
-          >
-            Close
-          </button>
-        </div>
-      )}
-    </div>
-  );
-};
 
 // Main CodeArena Component
 const CodeArena = () => {
@@ -336,7 +192,7 @@ const CodeArena = () => {
         </footer>
 
         {/* Accessibility Widget */}
-        <AccessibilityWidget />
+        {/* <AccessibilityWidget /> */}
       </div>
     </div>
   );

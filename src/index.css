@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+@layer components {
+    /* Dyslexic-Friendly Font */
+    .dyslexic-font {
+      @apply font-serif bg-blue-50 text-gray-800 font-semibold leading-relaxed tracking-wide;
+    }
+    
+    /* Cursor Highlight */
+    .cursor-highlight button,
+    .cursor-highlight a,
+    .cursor-highlight input,
+    .cursor-highlight textarea {
+      @apply cursor-pointer ring-2 ring-red-400 ring-offset-2;
+    }
+    
+    /* High Contrast Mode */
+    .high-contrast p,
+    .high-contrast h1,
+    .high-contrast h2,
+    .high-contrast h3,
+    .high-contrast h4,
+    .high-contrast h5,
+    .high-contrast h6,
+    .high-contrast span,
+    .high-contrast div,
+    .high-contrast li,
+    .high-contrast a,
+    .high-contrast button {
+      background-color: #ffffe0 !important;
+      color: #000000 !important;
+      text-shadow: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* General Readability Enhancements */
+    .readable-text {
+      @apply text-lg leading-relaxed tracking-wide text-gray-900 dark:text-gray-100;
+    }
+  }
+  
+  /* Text enlargement on hover */
+  .hover-text-enlarge p,
+  .hover-text-enlarge h1,
+  .hover-text-enlarge h2,
+  .hover-text-enlarge h3,
+  .hover-text-enlarge h4,
+  .hover-text-enlarge h5,
+  .hover-text-enlarge h6,
+  .hover-text-enlarge span,
+  .hover-text-enlarge li,
+  .hover-text-enlarge a {
+    transition: font-size 0.2s ease-in-out;
+  }
+  
+  .hover-text-enlarge p:hover,
+  .hover-text-enlarge h1:hover,
+  .hover-text-enlarge h2:hover,
+  .hover-text-enlarge h3:hover,
+  .hover-text-enlarge h4:hover,
+  .hover-text-enlarge h5:hover,
+  .hover-text-enlarge h6:hover,
+  .hover-text-enlarge span:hover,
+  .hover-text-enlarge li:hover,
+  .hover-text-enlarge a:hover {
+    font-size: 1.2em;
+  }
